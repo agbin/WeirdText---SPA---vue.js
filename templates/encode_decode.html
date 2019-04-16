@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body style="text-align:center; background-color: orange;">
+    <!--<form id="app" action="/v1/encode" method="post">-->
+        <!--<textarea type="text" name="text" rows="8" cols="100" placeholder="To encode put text here: ">-->
+            <!--{{ original }}-->
+        <!--</textarea><br><br>-->
+        <!--<button type="submit" class="btn btn-primary">Encode</button>-->
+    <!--</form>-->
+
+    <!--<form id="reverse" action="/v1/decode" method="post">-->
+        <!--<button type="submit" class="btn btn-primary">Decode</button><br><br>-->
+        <!--<textarea type="text" name="encoded" rows="8" cols="100" placeholder="To decode text copy all encoded text and paste it here. Be careful. It have to be all text, including: '\n-weird-\n' twice.">-->
+            <!--{{ message }}-->
+        <!--</textarea><br><br>-->
+
+    <!--</form><br>-->
+
+
+<input type="text" class="input" name="name" v-model="name">
+    <form id="app" action="/v1/encode" method="post">
+        <textarea type="text" name="text" rows="8" cols="100" placeholder="To encode put text here: ">
+            {{ original }}
+
+        </textarea><br><br>
+        <button type="submit" class="btn btn-primary">Encode</button>
+    </form>
+
+    <form id="reverse" action="/v1/decode" method="post">
+        <button type="submit" class="btn btn-primary">Decode</button><br><br>
+        <textarea type="text" name="encoded" rows="8" cols="100" placeholder="To decode text copy all encoded text and paste it here. Be careful. It have to be all text, including: '\n-weird-\n' twice.">
+            {{ message }}
+        </textarea><br><br>
+
+    </form><br>
+
+
+
+
+
+
+
+
+
+<script type="module">
+  import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.esm.browser.js'
+</script>
+<!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+<script>
+    var app = new Vue({
+        el: '#app',
+        delimiters: ['[[', ']]'],
+        data: {
+            message: message
+        }
+    })
+
+    var reverse = new Vue({
+        el: '#app',
+        delimiters: ['[[', ']]'],
+        data: {
+            original: original
+        }
+    })
+
+
+
+
+
+
+</script>
+
+<script type="text/javascript">
+alert("Hello world");
+</script>
+
+
+
+
+
+
+
+
+</body>
+
+{% endblock %}
